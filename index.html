@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cerca Libri</title>
+<meta name="description" content="Cerca e scarica libri gratuiti e legali (pubblico dominio / open access).">
+<meta name="theme-color" content="#4F46E5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Cerca Libri">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAE5klEQVR42u3S15JVVRSF4fkEiIIiIiBIIwqKitCCgKhIaroxZ8w555xzAHPO8cG4OMHyIZbjUrstqwyHAWP/s+pbNS57n/5rz7ZeA1LUlB4gRU1t1wBC1KQeIEVN7tAAQhA0soLevbPXgBQEjbCgd2kAIWpCD5CiJiY0gBAEjaygd+3uNSAFQSMr6J2TvQakIGiEBT2lAYSoHXt6DUhB0AgL+iINIERt1wOkqO0XawAhCBpZQW+7pNeAFASNrKAvvLTXgBQEjbCgL9MAQtRWPUCK2nq5BhCCoJEV9AVX9BqQgqARFvSVGkCIOv+qXgNSEDSygj7v6l4DUhA0woK+RgMIUVv0AClqy7UaQAiCRlbQ517Xa0AKgkZY0Hs1gBC1eW+/ASlq8/UaQIjapAdIUZtu0ABC1KYbNYAQtVEPkKI23qQBhCBoZAV9zs39BqQgaIQFfYsGEKI26AFS1IZbNYAQtV4PkKLW36YBhCBoZAV99u39BqSwBf1vj38a/6u/D/oODYP/+1zfkSThf1LjehwOxrm+7Y8OHPjtTw6Fvyn596/xOzUMnHcwv3NG0PzOI1Xjd2kYHGo3qu+cETS/6UjVOj0Oh8v91++cHjS/3WjVurs1DA7n+yffOSNofqeRqrV6HBLvr75zetBd/z1Grdbeo2HQlZsedJfO0RVBE3RW0Gfd228OBJ1/jq4ImqDDgr5Pw4CgOxC0oatao8eBoPPP0VWtuV/DgKA7ELShK4Im6Kygz3yg3xwIOv8cXRE0QWcFfcaD/eZA0Pnn6IqgCTos6Ic0DAi6A0EbuqrTH+43B4LOP0dXBE3QYUE/omFA0B0I2tBVrdbjQND55+iqVj+qYUDQHQja0BVBE3RW0Kc91m8OBJ1/jq4U9KA5EHQXgj74XdWpjw+aA0Hnn6MrgibosKCf0DAg6A4EbeiqVulxIOj8c3RVq57UMCDoDgRt6IqgCTor6JVPDZoDQeefo6ta+bSGAUF3IGhDVwRN0FlBn/LMoDkQdP45uiJogs4K+uRnB82BoPPP0RVBE3RY0M9pGBB0B4I2dFUr9DgQdP45uqoVz2sYEHQHgjZ0RdAEnRX0SS8MmgNB55+jK4Im6LCgX9QwIOgOBG3oqpbrcSDo/HN0Vctf0jAg6A4EbeiqxvQ4EHT+ObqqsZc1DAi6A0EbuqqxVzQMCLoDQRu6qmV6HAg6/xxd1bJXNQwIugNBG7oiaILOCvrE1wbNgaDzz9EVQRN0WNCvaxgQdAeCNnRVS/U4EHT+ObqqpW9oGBB0B4I2dFVL9DgQdP45uqolb2pgZKYHzW8yWgRN0FlBn/DWoAEpCBphQb+tAYSoxXqAFLX4HQ0gRC3epwGEqEV6gBS1aL8GEKIW7h82IEUtfFcDCEHQyAr6+PeGDUhB0AgL+n0NIEQt0AOkqAUfaAAhCBpZQR/34bABKQgaWUHP/2jYgBQ1/2MNIARBIyvoYz8ZNiAFQSMs6E81gBA1Tw+QouZ9pgGEIGhkBX3M58MGpCBoZAV99BfDBqQgaIQF/aUGEKLm6gFS1NyvNIAQBI2soOd8PWxAiprzjQYQgqCRFfRR3w4bkIKgkRX0kd8NG5CCoBEW9PcaQIiarQdIUbN/0ABCEDSygj7ix2EDUhA0woL+SQMIUbP0AClq1s8aQIia9cuvDUjxO68VOzwW8gxHAAAAAElFTkSuQmCC">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAE5klEQVR42u3S15JVVRSF4fkEiIIiIiBIIwqKitCCgKhIaroxZ8w555xzAHPO8cG4OMHyIZbjUrstqwyHAWP/s+pbNS57n/5rz7ZeA1LUlB4gRU1t1wBC1KQeIEVN7tAAQhA0soLevbPXgBQEjbCgd2kAIWpCD5CiJiY0gBAEjaygd+3uNSAFQSMr6J2TvQakIGiEBT2lAYSoHXt6DUhB0AgL+iINIERt1wOkqO0XawAhCBpZQW+7pNeAFASNrKAvvLTXgBQEjbCgL9MAQtRWPUCK2nq5BhCCoJEV9AVX9BqQgqARFvSVGkCIOv+qXgNSEDSygj7v6l4DUhA0woK+RgMIUVv0AClqy7UaQAiCRlbQ517Xa0AKgkZY0Hs1gBC1eW+/ASlq8/UaQIjapAdIUZtu0ABC1KYbNYAQtVEPkKI23qQBhCBoZAV9zs39BqQgaIQFfYsGEKI26AFS1IZbNYAQtV4PkKLW36YBhCBoZAV99u39BqSwBf1vj38a/6u/D/oODYP/+1zfkSThf1LjehwOxrm+7Y8OHPjtTw6Fvyn596/xOzUMnHcwv3NG0PzOI1Xjd2kYHGo3qu+cETS/6UjVOj0Oh8v91++cHjS/3WjVurs1DA7n+yffOSNofqeRqrV6HBLvr75zetBd/z1Grdbeo2HQlZsedJfO0RVBE3RW0Gfd228OBJ1/jq4ImqDDgr5Pw4CgOxC0oatao8eBoPPP0VWtuV/DgKA7ELShK4Im6Kygz3yg3xwIOv8cXRE0QWcFfcaD/eZA0Pnn6IqgCTos6Ic0DAi6A0EbuqrTH+43B4LOP0dXBE3QYUE/omFA0B0I2tBVrdbjQND55+iqVj+qYUDQHQja0BVBE3RW0Kc91m8OBJ1/jq4U9KA5EHQXgj74XdWpjw+aA0Hnn6MrgibosKCf0DAg6A4EbeiqVulxIOj8c3RVq57UMCDoDgRt6IqgCTor6JVPDZoDQeefo6ta+bSGAUF3IGhDVwRN0FlBn/LMoDkQdP45uiJogs4K+uRnB82BoPPP0RVBE3RY0M9pGBB0B4I2dFUr9DgQdP45uqoVz2sYEHQHgjZ0RdAEnRX0SS8MmgNB55+jK4Im6LCgX9QwIOgOBG3oqpbrcSDo/HN0Vctf0jAg6A4EbeiqxvQ4EHT+ObqqsZc1DAi6A0EbuqqxVzQMCLoDQRu6qmV6HAg6/xxd1bJXNQwIugNBG7oiaILOCvrE1wbNgaDzz9EVQRN0WNCvaxgQdAeCNnRVS/U4EHT+ObqqpW9oGBB0B4I2dFVL9DgQdP45uqolb2pgZKYHzW8yWgRN0FlBn/DWoAEpCBphQb+tAYSoxXqAFLX4HQ0gRC3epwGEqEV6gBS1aL8GEKIW7h82IEUtfFcDCEHQyAr6+PeGDUhB0AgL+n0NIEQt0AOkqAUfaAAhCBpZQR/34bABKQgaWUHP/2jYgBQ1/2MNIARBIyvoYz8ZNiAFQSMs6E81gBA1Tw+QouZ9pgGEIGhkBX3M58MGpCBoZAV99BfDBqQgaIQF/aUGEKLm6gFS1NyvNIAQBI2soOd8PWxAiprzjQYQgqCRFfRR3w4bkIKgkRX0kd8NG5CCoBEW9PcaQIiarQdIUbN/0ABCEDSygj7ix2EDUhA0woL+SQMIUbP0AClq1s8aQIia9cuvDUjxO68VOzwW8gxHAAAAAElFTkSuQmCC">
+<link rel="manifest" href='data:application/manifest+json,{"name":"Cerca Libri","short_name":"Libri","display":"standalone","background_color":"%23ffffff","theme_color":"%234F46E5","start_url":"./","icons":[{"src":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAE5klEQVR42u3S15JVVRSF4fkEiIIiIiBIIwqKitCCgKhIaroxZ8w555xzAHPO8cG4OMHyIZbjUrstqwyHAWP/s+pbNS57n/5rz7ZeA1LUlB4gRU1t1wBC1KQeIEVN7tAAQhA0soLevbPXgBQEjbCgd2kAIWpCD5CiJiY0gBAEjaygd+3uNSAFQSMr6J2TvQakIGiEBT2lAYSoHXt6DUhB0AgL+iINIERt1wOkqO0XawAhCBpZQW+7pNeAFASNrKAvvLTXgBQEjbCgL9MAQtRWPUCK2nq5BhCCoJEV9AVX9BqQgqARFvSVGkCIOv+qXgNSEDSygj7v6l4DUhA0woK+RgMIUVv0AClqy7UaQAiCRlbQ517Xa0AKgkZY0Hs1gBC1eW+/ASlq8/UaQIjapAdIUZtu0ABC1KYbNYAQtVEPkKI23qQBhCBoZAV9zs39BqQgaIQFfYsGEKI26AFS1IZbNYAQtV4PkKLW36YBhCBoZAV99u39BqSwBf1vj38a/6u/D/oODYP/+1zfkSThf1LjehwOxrm+7Y8OHPjtTw6Fvyn596/xOzUMnHcwv3NG0PzOI1Xjd2kYHGo3qu+cETS/6UjVOj0Oh8v91++cHjS/3WjVurs1DA7n+yffOSNofqeRqrV6HBLvr75zetBd/z1Grdbeo2HQlZsedJfO0RVBE3RW0Gfd228OBJ1/jq4ImqDDgr5Pw4CgOxC0oatao8eBoPPP0VWtuV/DgKA7ELShK4Im6Kygz3yg3xwIOv8cXRE0QWcFfcaD/eZA0Pnn6IqgCTos6Ic0DAi6A0EbuqrTH+43B4LOP0dXBE3QYUE/omFA0B0I2tBVrdbjQND55+iqVj+qYUDQHQja0BVBE3RW0Kc91m8OBJ1/jq4U9KA5EHQXgj74XdWpjw+aA0Hnn6MrgibosKCf0DAg6A4EbeiqVulxIOj8c3RVq57UMCDoDgRt6IqgCTor6JVPDZoDQeefo6ta+bSGAUF3IGhDVwRN0FlBn/LMoDkQdP45uiJogs4K+uRnB82BoPPP0RVBE3RY0M9pGBB0B4I2dFUr9DgQdP45uqoVz2sYEHQHgjZ0RdAEnRX0SS8MmgNB55+jK4Im6LCgX9QwIOgOBG3oqpbrcSDo/HN0Vctf0jAg6A4EbeiqxvQ4EHT+ObqqsZc1DAi6A0EbuqqxVzQMCLoDQRu6qmV6HAg6/xxd1bJXNQwIugNBG7oiaILOCvrE1wbNgaDzz9EVQRN0WNCvaxgQdAeCNnRVS/U4EHT+ObqqpW9oGBB0B4I2dFVL9DgQdP45uqolb2pgZKYHzW8yWgRN0FlBn/DWoAEpCBphQb+tAYSoxXqAFLX4HQ0gRC3epwGEqEV6gBS1aL8GEKIW7h82IEUtfFcDCEHQyAr6+PeGDUhB0AgL+n0NIEQt0AOkqAUfaAAhCBpZQR/34bABKQgaWUHP/2jYgBQ1/2MNIARBIyvoYz8ZNiAFQSMs6E81gBA1Tw+QouZ9pgGEIGhkBX3M58MGpCBoZAV99BfDBqQgaIQF/aUGEKLm6gFS1NyvNIAQBI2soOd8PWxAiprzjQYQgqCRFfRR3w4bkIKgkRX0kd8NG5CCoBEW9PcaQIiarQdIUbN/0ABCEDSygj7ix2EDUhA0woL+SQMIUbP0AClq1s8aQIia9cuvDUjxO68VOzwW8gxHAAAAAElFTkSuQmCC","sizes":"180x180","type":"image/png"}]}'>
+<style>
+:root{--ind:#4F46E5;--sky:#0EA5E9;--bg:#f5f6fa;--card:#fff;--txt:#111;--muted:#6b7280;--chipbg:#eef2ff;--border:#e5e7eb}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1117;--card:#1b1e27;--txt:#f3f4f6;--muted:#9aa0aa;--chipbg:#262a36;--border:#2a2f3a}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+header{background:linear-gradient(135deg,var(--ind),var(--sky));color:#fff;padding:calc(env(safe-area-inset-top) + 14px) 16px 14px;position:sticky;top:0;z-index:10}
+.row{display:flex;align-items:center;gap:8px}
+header h1{margin:0;font-size:19px;display:flex;align-items:center;gap:8px;flex:1}
+.favbtn{background:rgba(255,255,255,.2);border:0;color:#fff;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600}
+.search{display:flex;gap:8px;margin-top:12px}
+.search input{flex:1;border:0;border-radius:12px;padding:12px 14px;font-size:16px;background:#fff;color:#111}
+.search button{border:0;border-radius:12px;background:#fff;color:var(--ind);font-weight:700;padding:0 16px;font-size:16px}
+.controls{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.chip{border:1px solid rgba(255,255,255,.6);color:#fff;border-radius:999px;padding:6px 12px;font-size:13px;background:transparent}
+.chip.on{background:#fff;color:var(--ind);font-weight:700}
+.controls select{border-radius:999px;border:1px solid rgba(255,255,255,.6);background:transparent;color:#fff;padding:6px 8px;font-size:13px}
+.controls select option{color:#111}
+.toggle{margin-left:auto;font-size:13px;display:flex;align-items:center;gap:6px;color:#fff}
+main{padding:14px;max-width:680px;margin:0 auto}
+.status{color:var(--muted);text-align:center;padding:22px 8px;font-size:15px}
+.spin{width:30px;height:30px;border:3px solid var(--border);border-top-color:var(--ind);border-radius:50%;animation:r .8s linear infinite;margin:14px auto}
+@keyframes r{to{transform:rotate(360deg)}}
+.count{font-size:13px;color:var(--muted);margin:2px 2px 10px}
+.recent{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.recent button{background:var(--chipbg);border:0;color:var(--ind);border-radius:999px;padding:7px 12px;font-size:13px}
+.card{background:var(--card);border-radius:14px;padding:12px;margin-bottom:12px;display:flex;gap:12px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.cover{width:54px;height:76px;border-radius:6px;object-fit:cover;background:var(--chipbg);flex:none;display:flex;align-items:center;justify-content:center;font-size:24px}
+.meta{flex:1;min-width:0}
+.meta .t{font-weight:600;font-size:15px;line-height:1.25}
+.meta .a{color:var(--muted);font-size:13px;margin:2px 0 6px}
+.src{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;align-items:center}
+.acts a{text-decoration:none;font-size:13px;font-weight:600;color:#fff;background:var(--ind);padding:7px 11px;border-radius:9px}
+.acts a.alt{background:#10b981}
+.dlwait{font-size:12px;color:var(--muted);display:inline-flex;align-items:center;gap:6px}
+.dlwait::before{content:'';width:12px;height:12px;border:2px solid var(--border);border-top-color:var(--ind);border-radius:50%;display:inline-block;animation:r .8s linear infinite}
+.iconbtn{background:transparent;border:0;font-size:18px;padding:4px;cursor:pointer;line-height:1}
+.foot{margin:18px 4px 34px;color:var(--muted);font-size:13px;line-height:1.5}
+.foot a{color:var(--ind)}
+.foot .links{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.foot .links a{background:var(--chipbg);padding:6px 10px;border-radius:8px;text-decoration:none}
+.note{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:10px;padding:10px;font-size:12px;margin-top:10px}
+@media (prefers-color-scheme:dark){.note{background:#3a210f;border-color:#7c3a12;color:#fcd9b6}}
+</style>
+</head>
+<body>
+<header>
+  <div class="row">
+    <h1><span>&#128218;</span> Cerca Libri</h1>
+    <button class="favbtn" id="favtab" onclick="toggleView()">★ Preferiti</button>
+  </div>
+  <form class="search" onsubmit="cerca();return false">
+    <input id="q" type="search" placeholder="Titolo del libro" autocomplete="off" enterkeyhint="search">
+    <button type="submit">Cerca</button>
+  </form>
+  <div class="controls">
+    <button type="button" class="chip on" data-f="pdf" onclick="setFmt(this)">PDF</button>
+    <button type="button" class="chip" data-f="epub" onclick="setFmt(this)">EPUB</button>
+    <button type="button" class="chip" data-f="txt" onclick="setFmt(this)">TXT</button>
+    <select id="lang" title="Lingua (Gutenberg)">
+      <option value="">Lingua</option><option value="it">Italiano</option><option value="en">English</option>
+      <option value="fr">Français</option><option value="es">Español</option><option value="de">Deutsch</option>
+    </select>
+    <label class="toggle"><input type="checkbox" id="solo" onchange="render()"> solo <span id="fmtlbl">PDF</span></label>
+  </div>
+</header>
+<main>
+  <div id="status" class="status"></div>
+  <div id="count" class="count" style="display:none"></div>
+  <div id="results"></div>
+  <div id="footer" class="foot" style="display:none"></div>
+</main>
+<script>
+var FMT="pdf",RESULTS=[],VIEW="search";
+var recent=load("recent",[]),favs=load("preferiti",[]);
+function load(k,d){try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function human(b){b=+b;if(!b)return'';var u=['B','KB','MB','GB'],i=0;while(b>=1024&&i<3){b/=1024;i++}return (b<10&&i>0?b.toFixed(1):Math.round(b))+' '+u[i]}
+function norm(s){return (s||"").toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,' ').trim()}
+function esc(s){return (""+(s==null?"":s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function key(r){return norm(r.titolo)+'|'+norm(r.autore)}
+var IACACHE={},QCACHE={},SEARCHGEN=0;
+async function jget(u){var c=new AbortController(),t=setTimeout(()=>c.abort(),9000);try{var r=await fetch(u,{signal:c.signal});if(!r.ok)throw 0;return await r.json()}finally{clearTimeout(t)}}
+
+async function srcGutenberg(q,lang){try{
+  var url='https://gutendex.com/books?search='+encodeURIComponent(q)+(lang?'&languages='+lang:'');
+  var d=await jget(url);
+  return (d.results||[]).slice(0,8).map(b=>{var f={},cover='';
+    for(var[m,u]of Object.entries(b.formats||{})){if(u.endsWith('.zip'))continue;
+      if(m.includes('image')&&!cover)cover=u;
+      else if(m.includes('application/pdf'))f.pdf={url:u};
+      else if(m.includes('epub'))f.epub={url:u};
+      else if(m.startsWith('text/plain')&&!f.txt)f.txt={url:u};}
+    if(!Object.keys(f).length)return null;
+    return{titolo:b.title,autore:(b.authors&&b.authors[0]?b.authors[0].name:'Sconosciuto'),anno:'',fonte:'Project Gutenberg',cover,formati:f,pop:b.download_count||0};
+  }).filter(Boolean);}catch(e){return[]}}
+async function srcArchive(q){try{
+  var u='https://archive.org/advancedsearch.php?q='+encodeURIComponent('title:("'+q+'") AND mediatype:texts AND NOT access-restricted-item:true')+'&fl[]=identifier&fl[]=title&fl[]=creator&fl[]=year&fl[]=downloads&rows=8&output=json';
+  var d=await jget(u);
+  return (d.response.docs||[]).map(x=>{var cr=x.creator;if(Array.isArray(cr))cr=cr[0];
+    return{titolo:x.title||x.identifier,autore:cr||'Sconosciuto',anno:x.year||'',fonte:'Internet Archive',cover:'https://archive.org/services/img/'+x.identifier,formati:{},pop:x.downloads||0,ia:x.identifier};});
+  }catch(e){return[]}}
+async function srcOpenLibrary(q){try{
+  var d=await jget('https://openlibrary.org/search.json?q='+encodeURIComponent(q)+'&limit=12&fields=title,author_name,first_publish_year,cover_i,ia,ebook_access');
+  var out=[];for(var x of (d.docs||[])){if(x.ebook_access!=='public'||!x.ia||!x.ia.length)continue;
+    out.push({titolo:x.title,autore:(x.author_name&&x.author_name[0])||'Sconosciuto',anno:x.first_publish_year||'',fonte:'Open Library',cover:x.cover_i?('https://covers.openlibrary.org/b/id/'+x.cover_i+'-M.jpg'):'',formati:{},pop:0,ia:x.ia[0]});
+    if(out.length>=6)break;}
+  return out;}catch(e){return[]}}
+async function resolveIA(id){if(IACACHE[id])return IACACHE[id];try{var d=await jget('https://archive.org/metadata/'+id);var f={};
+  for(var file of (d.files||[])){var n=file.name,l=n.toLowerCase(),url='https://archive.org/download/'+id+'/'+encodeURIComponent(n);
+    if(l.endsWith('.pdf')&&!f.pdf)f.pdf={url,size:file.size};
+    else if(l.endsWith('.epub')&&!f.epub)f.epub={url,size:file.size};
+    else if(l.endsWith('_djvu.txt')&&!f.txt)f.txt={url,size:file.size};}
+  IACACHE[id]=f;return f;}catch(e){return{}}}
+
+function dedup(list){var seen={},order=[];for(var r of list){var k=key(r);
+  if(seen[k]){var b=seen[k];for(var[f,o]of Object.entries(r.formati))if(!b.formati[f])b.formati[f]=o;if(!b.cover)b.cover=r.cover;b.pop=Math.max(b.pop,r.pop);if(!b.ia&&r.ia)b.ia=r.ia;}
+  else{seen[k]=r;order.push(k);}}return order.map(k=>seen[k]);}
+function rank(list,q){var nq=norm(q),rel=t=>t===nq?0:t.startsWith(nq)?1:t.includes(nq)?2:3;
+  return list.sort((a,b)=>{var ra=rel(norm(a.titolo)),rb=rel(norm(b.titolo));return ra!==rb?ra-rb:b.pop-a.pop;});}
+
+async function cerca(){var q=document.getElementById('q').value.trim();if(!q)return;
+  document.getElementById('q').blur();VIEW="search";syncFavTab();addRecent(q);
+  document.getElementById('footer').style.display='none';
+  var lang=document.getElementById('lang').value,ck=lang+'::'+q.toLowerCase();
+  if(QCACHE[ck]){RESULTS=QCACHE[ck];render();showFooter(q);return;}
+  var gen=++SEARCHGEN;
+  document.getElementById('count').style.display='none';
+  document.getElementById('results').innerHTML='';
+  document.getElementById('status').style.display='block';
+  document.getElementById('status').innerHTML='<div class="spin"></div>Cerco su Gutenberg, Internet Archive, Open Library…';
+  var acc=[];
+  function merge(items){if(gen!==SEARCHGEN)return;acc=rank(dedup(acc.concat(items)),q);RESULTS=acc;render();showFooter(q);}
+  var ps=[srcGutenberg(q,lang),srcArchive(q),srcOpenLibrary(q)];
+  ps.forEach(p=>p.then(merge));
+  await Promise.all(ps);
+  if(gen!==SEARCHGEN)return;
+  await Promise.all(acc.filter(r=>r.ia&&!r._done).map(async r=>{var f=await resolveIA(r.ia);r.formati=Object.assign({},r.formati,f);r._done=true;}));
+  if(gen!==SEARCHGEN)return;
+  RESULTS=rank(dedup(acc),q).filter(r=>Object.keys(r.formati).length);QCACHE[ck]=RESULTS;
+  render();}
+
+function cardHTML(r,idx){
+  var fmts=Object.keys(r.formati).sort();
+  var ordered=[FMT].concat(fmts.filter(f=>f!==FMT)).filter(f=>r.formati[f]);
+  var dl=ordered.map((f,i)=>{var o=r.formati[f],sz=o.size?(' · '+human(o.size)):'';
+    return '<a class="'+(i===0?'':'alt')+'" href="'+esc(o.url)+'" target="_blank" rel="noopener" download>'+f.toUpperCase()+sz+'</a>';}).join('');
+  if(!dl)dl=(r.ia&&!r._done)?'<span class="dlwait">preparo i link…</span>':'';
+  var cover=r.cover?'<img class="cover" loading="lazy" src="'+esc(r.cover)+'" onerror="this.outerHTML=\'<div class=cover>&#128214;</div>\'">':'<div class="cover">&#128214;</div>';
+  var fav=isFav(r)?'★':'☆';
+  var share=navigator.share?'<button class="iconbtn" onclick="shareBook('+idx+')" title="Condividi">&#128279;</button>':'';
+  return '<div class="card">'+cover+'<div class="meta"><div class="t">'+esc(r.titolo)+(r.anno?' <span class="src">('+esc(r.anno)+')</span>':'')+'</div><div class="a">'+esc(r.autore)+'</div><div class="src">'+esc(r.fonte)+'</div><div class="acts">'+dl+'<button class="iconbtn" onclick="toggleFav('+idx+')" title="Preferiti">'+fav+'</button>'+share+'</div></div></div>';
+}
+
+function render(){
+  var box=document.getElementById('results'),st=document.getElementById('status'),cnt=document.getElementById('count');
+  var base=VIEW==='fav'?favs:RESULTS;
+  var list=document.getElementById('solo').checked?base.filter(r=>r.formati[FMT]):base;
+  if(VIEW==='search'&&!RESULTS.length){renderStart();cnt.style.display='none';box.innerHTML='';return;}
+  if(VIEW==='fav'&&!favs.length){st.style.display='block';st.innerHTML='Nessun preferito. Tocca ☆ su un libro per salvarlo.';cnt.style.display='none';box.innerHTML='';return;}
+  st.style.display='none';
+  cnt.style.display='block';cnt.textContent=(VIEW==='fav'?'Preferiti: ':'Risultati: ')+list.length+(document.getElementById('solo').checked?(' in '+FMT.toUpperCase()):'');
+  if(!list.length){box.innerHTML='<div class="status">Nessun risultato in '+FMT.toUpperCase()+'. Disattiva il filtro per vedere gli altri formati.</div>';return;}
+  box.innerHTML=list.map((r,i)=>cardHTML(r,base===favs?i:RESULTS.indexOf(r))).join('');
+}
+
+function renderStart(){
+  var st=document.getElementById('status');st.style.display='block';
+  var rec=recent.length?('<div class="recent">'+recent.map(t=>'<button onclick="reSearch(this.dataset.t)" data-t="'+esc(t)+'">'+esc(t)+'</button>').join('')+'</div>'):'';
+  st.innerHTML='Scrivi un titolo e tocca <b>Cerca</b>.<br>Solo fonti legali e gratuite.'+(rec?'<div style="margin-top:14px;font-size:13px">Cerche recenti:</div>':'')+rec;
+}
+function reSearch(t){document.getElementById('q').value=t;cerca();}
+
+function setFmt(b){document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));b.classList.add('on');FMT=b.dataset.f;document.getElementById('fmtlbl').textContent=FMT.toUpperCase();render();}
+function toggleView(){VIEW=VIEW==='fav'?'search':'fav';syncFavTab();document.getElementById('footer').style.display='none';render();}
+function syncFavTab(){document.getElementById('favtab').textContent=(VIEW==='fav'?'← Cerca':'★ Preferiti'+(favs.length?' ('+favs.length+')':''));}
+
+function isFav(r){return favs.some(f=>key(f)===key(r));}
+function toggleFav(idx){var r=(VIEW==='fav'?favs:RESULTS)[idx];if(!r)return;var k=key(r);
+  if(favs.some(f=>key(f)===k))favs=favs.filter(f=>key(f)!==k);else favs.push(r);
+  save("preferiti",favs);syncFavTab();render();}
+function shareBook(idx){var r=(VIEW==='fav'?favs:RESULTS)[idx];if(!r)return;var o=r.formati[FMT]||r.formati[Object.keys(r.formati)[0]];
+  navigator.share({title:r.titolo,text:r.titolo+' — '+r.autore,url:o?o.url:location.href}).catch(()=>{});}
+function addRecent(q){recent=[q].concat(recent.filter(t=>t.toLowerCase()!==q.toLowerCase())).slice(0,6);save("recent",recent);}
+
+function showFooter(q){var eq=encodeURIComponent(q),f=document.getElementById('footer');f.style.display='block';
+  f.innerHTML='<div class="note">⚠️ Solo libri di <b>pubblico dominio</b> o ad <b>accesso aperto</b>. Per i titoli recenti sotto copyright usa l\'acquisto o il prestito digitale legale.</div>'+
+    '<div>Altre fonti legali (aprono nel browser):</div><div class="links">'+
+    '<a target="_blank" rel="noopener" href="https://standardebooks.org/ebooks/?query='+eq+'">Standard Ebooks</a>'+
+    '<a target="_blank" rel="noopener" href="https://librivox.org/search?q='+eq+'&search_form=advanced">LibriVox audiolibri</a>'+
+    '<a target="_blank" rel="noopener" href="https://www.doabooks.org/en/search?query='+eq+'">DOAB</a>'+
+    '<a target="_blank" rel="noopener" href="https://www.medialibrary.it/cerca?keywords='+eq+'">MLOL biblioteche</a></div>';}
+
+syncFavTab();renderStart();
+</script>
+</body>
+</html>
